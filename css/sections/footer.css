@@ -1,0 +1,207 @@
+/* ============================================================
+   SEÇÃO · Footer
+   Figma node 10002:2422. Background caramelo escuro.
+   Layout 3 colunas no desktop (344 | 174 | 390).
+   Mobile-first: empilhado → 3 colunas (≥ 1024px).
+   ============================================================ */
+
+.footer {
+  background-color: var(--brand-secondary);
+  padding-block: 3.75rem; /* 60px */
+  padding-inline: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* ---------- Wrapper central (máx. 1062px = soma das colunas) ---------- */
+.footer__inner {
+  width: 100%;
+  max-width: 1062px;
+  margin-inline: auto;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem; /* 40px (mobile) */
+}
+
+/* ============================================================
+   Coluna 1 · Marca (logo + info + social)
+   ============================================================ */
+.footer__brand {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem; /* 20px */
+}
+
+.footer__logo {
+  width: 220px;
+  height: auto;
+  display: block;
+}
+
+/* <address> por semântica — reset do itálico padrão */
+.footer__contact {
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer__contact p {
+  color: var(--brand-four);
+  font-size: var(--fs-paragraph); /* 16px */
+  line-height: var(--lh-base);    /* 1.6 */
+  margin: 0;
+}
+
+.footer__contact strong {
+  font-weight: var(--fw-bold);
+}
+
+/* ---------- Ícones sociais ---------- */
+.footer__social {
+  display: flex;
+  gap: 0.4375rem; /* 7px */
+  align-items: center;
+}
+
+.footer__social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.9375rem;  /* 47px */
+  height: 2.8125rem; /* 45px */
+
+  background-color: var(--brand-primary); /* creme */
+  border-radius: 0.5rem; /* 8px */
+
+  color: var(--brand-secondary);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.footer__social-link:hover {
+  opacity: 0.75;
+}
+
+.footer__social-link svg {
+  width: 1.375rem;  /* 22px */
+  height: 1.375rem;
+  fill: var(--brand-secondary);
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   Coluna 2 · Navegação
+   ============================================================ */
+.footer__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* 8px */
+}
+
+.footer__nav-label {
+  color: var(--brand-four);
+  font-size: var(--fs-paragraph);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-base);
+}
+
+.footer__nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer__nav a {
+  color: var(--brand-four);
+  font-size: var(--fs-paragraph);
+  line-height: var(--lh-base);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.footer__nav a:hover {
+  opacity: 0.7;
+}
+
+/* ============================================================
+   Coluna 3 · Mapa
+   ============================================================ */
+.footer__map-wrapper {
+  border-radius: 1.3125rem; /* 21px */
+  overflow: hidden;
+  width: 100%;
+  height: 16.75rem; /* 268px */
+}
+
+.footer__map {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ============================================================
+   Divisor e barra inferior
+   ============================================================ */
+.footer__divider {
+  width: 100%;
+  max-width: 1062px;
+  margin-inline: auto;
+  height: 1px;
+  border: none;
+  background-color: rgba(240, 240, 240, 0.3); /* brand-four com opacidade */
+}
+
+.footer__bottom {
+  width: 100%;
+  max-width: 1062px;
+  margin-inline: auto;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.footer__bottom small {
+  display: block;
+  color: var(--brand-four);
+  font-size: var(--fs-span);       /* 14px */
+  font-weight: var(--fw-medium);   /* 500 */
+  line-height: var(--lh-none);     /* 1 */
+  white-space: nowrap;
+}
+
+/* ============================================================
+   Desktop — 3 colunas (≥ 1024px)
+   Proporções do Figma: 344px · 174px · 390px → gap 75px
+   ============================================================ */
+@media (min-width: 1024px) {
+  .footer__inner {
+    grid-template-columns: 344fr 174fr 390fr;
+    gap: 4.6875rem; /* 75px */
+    align-items: start;
+  }
+}
+
+/* ============================================================
+   Mobile (< 640px)
+   ============================================================ */
+@media (max-width: 639px) {
+  .footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .footer__map-wrapper {
+    height: 12.5rem; /* 200px — mapa mais compacto */
+  }
+}

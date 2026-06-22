@@ -20,14 +20,9 @@
 @import url("sections/hero.css");
 @import url("sections/acompanhamento.css");
 @import url("sections/beneficits.css");
+@import url("sections/como-funciona.css");
+@import url("sections/depoimentos.css");
 
-/* Adicionar conforme cada seção for implementada,
-   na ordem do layout do Figma:
-
-   @import url("sections/sobre.css");
-   @import url("sections/acompanhamento.css");
-   @import url("sections/como-funciona.css");
-   @import url("sections/depoimentos.css");
-   @import url("sections/faq.css");
-   @import url("sections/footer.css");
-*/
+@import url("sections/sobre.css");
+@import url("sections/faq.css");
+@import url("sections/footer.css");

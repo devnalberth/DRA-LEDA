@@ -1,0 +1,144 @@
+/* ============================================================
+   SEÇÃO · Como Funciona
+   Figma node 10002:1818. Header centralizado, três cards com
+   imagem no topo e CTA central. Mobile-first: 1 coluna → 3 colunas.
+   ============================================================ */
+
+.como-funciona {
+  background-color: var(--color-white);
+  padding: 3.75rem 1.5rem 5.625rem; /* 60 / 90 */
+}
+
+.como-funciona__inner {
+  width: 100%;
+  max-width: 1083px;
+  margin-inline: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem; /* 40px */
+}
+
+.como-funciona__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.875rem; /* 30px */
+  text-align: center;
+}
+
+.como-funciona__eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+
+  color: var(--brand-five);
+  font-size: var(--fs-span);
+  font-weight: var(--fw-medium);
+  line-height: var(--lh-none);
+  text-transform: uppercase;
+}
+
+.como-funciona__eyebrow::before,
+.como-funciona__eyebrow::after {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 1px;
+  background-color: currentColor;
+}
+
+.como-funciona h2 {
+  max-width: 36rem; /* 576px */
+  color: var(--brand-five);
+  font-size: var(--fs-h3);
+  text-wrap: balance;
+}
+
+.como-funciona__cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.como-funciona__cards li {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 15px;
+  background-color: var(--brand-secondary);
+}
+
+.como-funciona__cards img {
+  width: 100%;
+  height: 205px;
+  object-fit: cover;
+  background-color: var(--brand-primary);
+}
+
+.como-funciona__cards li:nth-child(2) img {
+  object-position: center 40%;
+}
+
+.como-funciona__cards li:nth-child(3) img {
+  object-position: center 34%;
+}
+
+.como-funciona__cards li > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9375rem; /* 15px */
+  padding: 2.1875rem 1.4375rem; /* 35 / 23 */
+}
+
+.como-funciona__cards h3 {
+  max-width: 17rem;
+  color: var(--brand-primary);
+  font-size: var(--fs-h4);
+  line-height: var(--lh-tight);
+}
+
+.como-funciona__cards p {
+  color: var(--brand-four);
+}
+
+.como-funciona__button {
+  padding: 1.375rem 3.125rem; /* 22 / 50 */
+  color: var(--brand-primary);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  box-shadow: 0 6px 12.5px rgba(255, 218, 158, 0.25);
+}
+
+.como-funciona__button img {
+  width: 18px;
+  aspect-ratio: 1;
+}
+
+@media (min-width: 768px) {
+  .como-funciona__cards {
+    grid-template-columns: repeat(3, minmax(0, 350px));
+    justify-content: center;
+    gap: 1.034rem; /* 16.55px */
+  }
+
+  .como-funciona__cards li {
+    min-height: 539px;
+  }
+}
+
+@media (max-width: 767px) {
+  .como-funciona {
+    padding-block: 3rem;
+  }
+
+  .como-funciona__button {
+    width: 100%;
+    max-width: 350px;
+    padding-inline: 1.5rem;
+  }
+}

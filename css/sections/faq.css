@@ -1,0 +1,188 @@
+/* ============================================================
+   SEÇÃO · FAQ + CTA
+   Figma node 10002:2253. Background creme com dois blocos
+   verticais: accordion de perguntas + bloco de conversão.
+   Mobile-first.
+   ============================================================ */
+
+.faq {
+  background-color: var(--brand-primary);
+  padding-block: 3.75rem; /* 60px */
+  padding-inline: 1.5rem;
+}
+
+.faq__inner {
+  width: 100%;
+  max-width: 807px;
+  margin-inline: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.75rem; /* 60px */
+}
+
+/* ---------- Eyebrow badge (base) ---------- */
+.faq__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4375rem 1.125rem; /* 7px 18px */
+
+  background-color: var(--brand-secondary);
+  border-radius: 999px;
+
+  font-size: 0.75rem;          /* 12px */
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.18em;      /* 2.16px */
+  line-height: 1rem;           /* 16px */
+  text-transform: uppercase;
+  color: var(--brand-four);
+  white-space: nowrap;
+}
+
+.faq__eyebrow--outlined {
+  border: 1px solid var(--brand-third);
+}
+
+/* ============================================================
+   Bloco FAQ (perguntas e respostas)
+   ============================================================ */
+.faq__block {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem; /* 40px */
+}
+
+.faq__title {
+  font-size: var(--fs-h3);      /* 32px desktop / 20px mobile */
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-tight);
+  color: var(--brand-secondary);
+  text-transform: uppercase;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.faq__list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem; /* 12px */
+}
+
+/* ---------- Item accordion (<details>/<summary>) ---------- */
+.faq__item {
+  background-color: var(--brand-secondary);
+  border-radius: 1rem; /* 16px */
+  overflow: hidden;
+}
+
+.faq__item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem; /* 20px 24px */
+  min-height: 4.875rem;    /* 78px */
+
+  cursor: pointer;
+  list-style: none;
+
+  font-size: var(--fs-button); /* 18px */
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-none);
+  color: var(--brand-four);
+}
+
+/* Remove o marcador padrão do <details> */
+.faq__item summary::-webkit-details-marker { display: none; }
+.faq__item summary::marker { display: none; }
+
+/* ---------- Ícone "+" (círculo com plus.svg) ---------- */
+.faq__icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 2.25rem;  /* 36px */
+  height: 2.25rem; /* 36px */
+
+  border: 1px solid var(--brand-primary);
+  border-radius: 50%;
+
+  transition: transform 0.3s ease;
+}
+
+.faq__icon img {
+  width: 1rem;  /* 16px */
+  height: 1rem; /* 16px */
+}
+
+.faq__item[open] .faq__icon {
+  transform: rotate(45deg);
+}
+
+/* ---------- Resposta do item ---------- */
+.faq__answer {
+  padding: 0 1.5rem 1.25rem;
+}
+
+.faq__answer p {
+  color: var(--brand-four);
+  font-size: var(--fs-paragraph);
+  line-height: var(--lh-base);
+}
+
+/* ============================================================
+   Bloco CTA ("Agende sua avaliação hoje")
+   ============================================================ */
+.faq__cta {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.faq__cta h2 {
+  color: var(--brand-secondary);
+  text-wrap: balance;
+}
+
+.faq__cta p {
+  max-width: 31.875rem; /* 510px */
+  color: var(--brand-secondary);
+}
+
+/* Botão CTA: pill em vez do border-radius padrão (8px) */
+.faq__cta-button {
+  padding: 1.125rem 1.875rem; /* 18px 30px */
+  border-radius: 2.25rem;     /* 36px */
+}
+
+/* ============================================================
+   Mobile (< 768px)
+   ============================================================ */
+@media (max-width: 767px) {
+  .faq {
+    padding-block: 3rem;
+  }
+
+  .faq__item summary {
+    font-size: 1rem;
+    padding: 1rem 1.25rem;
+    min-height: auto;
+  }
+
+  .faq__cta h2 {
+    font-size: var(--fs-h2); /* usa token mobile: 1.5rem = 24px */
+  }
+
+  .faq__cta-button {
+    width: 100%;
+    max-width: 20rem;
+  }
+}

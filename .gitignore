@@ -22,6 +22,12 @@ $RECYCLE.BIN/
 *.swo
 *~
 
+# ===== Ferramentas de IA / agentes =====
+.claude/
+.codex/
+.cursor/
+.impeccable/
+
 # ===== Temporários do Figma MCP =====
 # Assets escritos pelo get_design_context (dirForAssetWrites)
 .figma-tmp/
