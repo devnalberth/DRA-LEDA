@@ -1,0 +1,58 @@
+/* ============================================================
+   Importado do Design System (Figma) — cores e tipografia
+   ============================================================ */
+
+:root {
+  /* ---------- CORES · Marca ---------- */
+  --brand-primary: #efe1d5;   /* Creme            */
+  --brand-secondary: #804a08; /* Caramelo escuro  */
+  --brand-third: #9f7659;     /* Marrom suave     */
+  --brand-four: #f0f0f0;      /* Off-white        */
+  --brand-five: #4d3a19;      /* Marrom profundo  */
+
+  /* ---------- CORES · Neutros ---------- */
+  --black: #000000;
+  --white: #ffffff;
+  --color-white: #f2f2f2; /* Branco suave     */
+  --gray-200: #121214;    /* Quase preto      */
+  --gray-900: #c4c4cc;    /* Cinza claro      */
+  --gray-950: #e1e1e6;    /* Cinza muito claro*/
+
+  /* ---------- TIPOGRAFIA · Família ---------- */
+  --font-family: "Sora", system-ui, -apple-system, sans-serif;
+
+  /* ---------- TIPOGRAFIA · Pesos ---------- */
+  --fw-thin: 100;
+  --fw-extralight: 200;
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600; /* Button */
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+
+  /* ---------- TIPOGRAFIA · Tamanhos (Desktop) ---------- */
+  --fs-h1: 4rem;         /* 64px */
+  --fs-h2: 3rem;         /* 48px */
+  --fs-h3: 2rem;         /* 32px */
+  --fs-h4: 1.625rem;     /* 26px */
+  --fs-paragraph: 1rem;  /* 16px */
+  --fs-button: 1.125rem; /* 18px */
+  --fs-span: 0.875rem;   /* 14px */
+
+  /* ---------- TIPOGRAFIA · Altura de linha ---------- */
+  --lh-tight: 1.2; /* Títulos        */
+  --lh-base: 1.6;  /* Parágrafo      */
+  --lh-none: 1;    /* Span / Botão   */
+
+  --letter-spacing: 0;
+}
+
+/* ---------- TIPOGRAFIA · Tamanhos (Mobile) ---------- */
+@media (max-width: 768px) {
+  :root {
+    --fs-h1: 2.5rem;  /* 40px */
+    --fs-h2: 1.5rem;  /* 24px */
+    --fs-h3: 1.25rem; /* 20px */
+  }
+}

@@ -1,0 +1,85 @@
+/* ============================================================
+   FONTES · Sora (importada localmente)
+   Arquivos-fonte em: assets/fonte/
+   Caminho relativo a partir deste arquivo: ../../assets/fonte/
+   ============================================================ */
+
+@font-face {
+  font-family: "Sora";
+  src: url("../../assets/fonte/Sora-Thin.woff2") format("woff2"),
+       url("../../assets/fonte/Sora-Thin.woff") format("woff"),
+       url("../../assets/fonte/Sora-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sora";
+  src: url("../../assets/fonte/Sora-ExtraLight.woff2") format("woff2"),
+       url("../../assets/fonte/Sora-ExtraLight.woff") format("woff"),
+       url("../../assets/fonte/Sora-ExtraLight.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sora";
+  src: url("../../assets/fonte/Sora-Light.woff2") format("woff2"),
+       url("../../assets/fonte/Sora-Light.woff") format("woff"),
+       url("../../assets/fonte/Sora-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sora";
+  src: url("../../assets/fonte/Sora-Regular.woff2") format("woff2"),
+       url("../../assets/fonte/Sora-Regular.woff") format("woff"),
+       url("../../assets/fonte/Sora-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sora";
+  src: url("../../assets/fonte/Sora-Medium.woff2") format("woff2"),
+       url("../../assets/fonte/Sora-Medium.woff") format("woff"),
+       url("../../assets/fonte/Sora-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sora";
+  src: url("../../assets/fonte/Sora-SemiBold.woff2") format("woff2"),
+       url("../../assets/fonte/Sora-SemiBold.woff") format("woff"),
+       url("../../assets/fonte/Sora-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sora";
+  src: url("../../assets/fonte/Sora-Bold.woff2") format("woff2"),
+       url("../../assets/fonte/Sora-Bold.woff") format("woff"),
+       url("../../assets/fonte/Sora-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sora";
+  src: url("../../assets/fonte/Sora-ExtraBold.woff2") format("woff2"),
+       url("../../assets/fonte/Sora-ExtraBold.woff") format("woff"),
+       url("../../assets/fonte/Sora-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}

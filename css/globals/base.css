@@ -1,0 +1,68 @@
+/* ============================================================
+   BASE · estilos globais de elementos
+   Define a tipografia nos próprios elementos para que o HTML
+   precise do mínimo de classes possível.
+   ============================================================ */
+
+html {
+  font-size: 100%; /* 1rem = 16px */
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--fs-paragraph);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-base);
+  color: var(--brand-five);
+  background-color: var(--color-white);
+}
+
+/* ---------- Títulos ---------- */
+h1,
+h2,
+h3,
+h4 {
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--letter-spacing);
+}
+
+h1 { font-size: var(--fs-h1); }
+h2 { font-size: var(--fs-h2); }
+h3 { font-size: var(--fs-h3); }
+h4 { font-size: var(--fs-h4); }
+
+/* ---------- Texto ---------- */
+p {
+  font-size: var(--fs-paragraph);
+  line-height: var(--lh-base);
+}
+
+/* Span — rótulos e textos de apoio */
+small {
+  font-size: var(--fs-span);
+  font-weight: var(--fw-medium);
+  line-height: var(--lh-none);
+}
+
+/* ---------- Layout ---------- */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+/* ---------- Acessibilidade ---------- */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

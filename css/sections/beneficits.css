@@ -1,0 +1,142 @@
+/* ============================================================
+   SEÇÃO · Benefícios ("O que você encontra na consulta")
+   Camadas:
+   1. Seção creme (fundo).
+   2. Band marrom full-width + logo watermark (20%), centrada,
+      atrás do painel.
+   3. Painel marrom (borda creme) com título, divisores,
+      6 cards (ícone + título + descrição) e CTA.
+   Mobile-first: 1 → 2 (≥600px) → 3 colunas (≥1024px).
+   ============================================================ */
+
+.beneficits {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background-color: var(--brand-primary);
+  padding-block: clamp(2.5rem, 5vw, 3.75rem);
+  padding-inline: 1.5rem;
+}
+
+/* ---------- Camada de fundo (band + watermark) ----------
+   Só aparece em telas largas (≥1280px), onde o painel fica
+   centralizado e o watermark realmente fica visível nas laterais.
+   Abaixo disso o painel é quase full-width e a band viraria
+   apenas tiras marrons sem sentido — então fica oculta. */
+.beneficits__bg {
+  display: none;
+  position: absolute;
+  inset-inline: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: min(723px, 65%);
+  background-color: var(--brand-secondary);
+  z-index: 0;
+}
+
+.beneficits__bg::before {
+  content: "";
+  position: absolute;
+  inset: 40px 0;
+  background: url("../../assets/logo/logo-bg.png") center / contain no-repeat;
+  opacity: 0.2;
+}
+
+/* ---------- Painel ---------- */
+.beneficits__panel {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1222px;
+  margin-inline: auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2rem, 4vw, 3.125rem); /* 50px */
+  padding: clamp(1.5rem, 4vw, 3.75rem); /* 60px */
+
+  background-color: var(--brand-secondary);
+  border: 1px solid var(--brand-primary);
+  border-radius: 16px;
+}
+
+.beneficits__panel > h2 {
+  color: var(--brand-primary);
+  text-align: center;
+}
+
+.beneficits__panel hr {
+  width: 100%;
+  height: 1px;
+  border: 0;
+  background-color: var(--brand-primary);
+}
+
+.beneficits .button {
+  align-self: center;
+}
+
+/* ---------- Grid de cards ---------- */
+.beneficits__cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: 1fr; /* todos os cards com a mesma altura */
+  gap: 20px;
+  width: 100%;
+}
+
+.beneficits__cards li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5625rem; /* 25px */
+  padding: 1.875rem 1.25rem; /* 30 / 20 */
+  border-radius: 12px;
+  background-color: var(--brand-primary);
+  text-align: center;
+}
+
+.beneficits__cards img {
+  width: 81px;
+  aspect-ratio: 1;
+}
+
+.beneficits__cards h3 {
+  font-size: 1.125rem; /* 18px */
+  font-weight: var(--fw-bold);
+  line-height: 1.2;
+  color: var(--brand-five);
+}
+
+.beneficits__cards p {
+  max-width: 18rem; /* ~287px */
+  color: var(--brand-five);
+}
+
+/* ============================================================
+   Tablet — 2 colunas (≥600px)
+   ============================================================ */
+@media (min-width: 600px) {
+  .beneficits__cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ============================================================
+   Desktop — 3 colunas (≥1024px)
+   ============================================================ */
+@media (min-width: 1024px) {
+  .beneficits__cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ============================================================
+   Telas largas — band marrom + watermark atrás do painel
+   ============================================================ */
+@media (min-width: 1280px) {
+  .beneficits__bg {
+    display: block;
+  }
+}

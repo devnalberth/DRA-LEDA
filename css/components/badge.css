@@ -1,0 +1,20 @@
+/* ============================================================
+   COMPONENTE · Badge (eyebrow)
+   Ícone + rótulo curto usado acima dos títulos de seção.
+   ============================================================ */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  color: var(--brand-five);
+  font-size: 1rem;
+  font-weight: var(--fw-medium);
+  line-height: var(--lh-none);
+}
+
+.badge img {
+  width: 22px;
+  aspect-ratio: 1;
+}

@@ -1,0 +1,145 @@
+/* ============================================================
+   SEÇÃO · Acompanhamento
+   Esquerda: badge + título + parágrafo + 2 fotos + CTA.
+   Direita: lista de 4 cards (pergunta + descrição + foto).
+   Mobile-first → cards horizontais (≥600px) → 2 colunas (≥1024px).
+   ============================================================ */
+
+.acompanhamento {
+  background-color: var(--brand-primary);
+  padding-block: clamp(3rem, 6vw, 5.625rem);
+  padding-inline: max(1.5rem, calc((100% - 1280px) / 2));
+
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+/* ---------- Coluna esquerda (intro) ---------- */
+.acompanhamento__intro {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+/* grupos internos: (badge+título+texto) e (fotos+cta) */
+.acompanhamento__intro > div {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem; /* 20px */
+}
+
+.acompanhamento h2 {
+  text-transform: uppercase;
+  color: var(--brand-five);
+}
+
+.acompanhamento__intro p {
+  color: var(--brand-five);
+  font-weight: var(--fw-bold);
+  max-width: 29rem;
+}
+
+.acompanhamento__photos {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.acompanhamento__photos img {
+  flex: 1;
+  aspect-ratio: 195 / 188;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+/* ---------- Coluna direita (lista de cards) ---------- */
+.acompanhamento__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem; /* 20px */
+}
+
+.acompanhamento__list li {
+  display: flex;
+  flex-direction: column; /* mobile: imagem no topo */
+  gap: 1rem;
+  padding: 1.25rem;
+  border-radius: 12px;
+  background-color: var(--brand-secondary);
+  color: var(--white);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.acompanhamento__list li > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.acompanhamento__list h3 {
+  font-size: 1.125rem; /* 18px */
+  font-weight: var(--fw-bold);
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.acompanhamento__list li p {
+  color: var(--white);
+}
+
+.acompanhamento__list img {
+  width: 100%;
+  aspect-ratio: 197 / 184;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+@media (hover: hover) {
+  .acompanhamento__list li:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 30px -16px rgba(77, 58, 25, 0.6);
+  }
+}
+
+/* ============================================================
+   Card horizontal — a partir de 600px (imagem à direita)
+   ============================================================ */
+@media (min-width: 600px) {
+  .acompanhamento__list li {
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.25rem 1.5rem; /* 20 / 24 */
+  }
+
+  .acompanhamento__list li > div {
+    flex: 1;
+    gap: 1.75rem; /* 28px */
+  }
+
+  .acompanhamento__list img {
+    flex: 0 0 197px;
+    width: 197px;
+  }
+}
+
+/* ============================================================
+   Duas colunas — a partir de 1024px
+   ============================================================ */
+@media (min-width: 1024px) {
+  .acompanhamento {
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+  }
+
+  /* texto no topo e fotos+cta na base, acompanhando a altura da lista */
+  .acompanhamento__intro {
+    flex: 0 1 461px;
+    justify-content: space-between;
+  }
+
+  .acompanhamento__list {
+    flex: 0 1 648px;
+  }
+}

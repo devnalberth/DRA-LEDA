@@ -1,0 +1,33 @@
+/* ============================================================
+   STYLE.CSS · Ponto de entrada
+   Landing Page · Dra. Leda
+
+   Ordem de importação (não alterar):
+   fontes → tokens → reset → base → componentes → seções
+   ============================================================ */
+
+/* ---------- Global ---------- */
+@import url("globals/fonts.css");
+@import url("globals/variables.css");
+@import url("globals/reset.css");
+@import url("globals/base.css");
+
+/* ---------- Componentes ---------- */
+@import url("components/button.css");
+@import url("components/badge.css");
+
+/* ---------- Seções ---------- */
+@import url("sections/hero.css");
+@import url("sections/acompanhamento.css");
+@import url("sections/beneficits.css");
+
+/* Adicionar conforme cada seção for implementada,
+   na ordem do layout do Figma:
+
+   @import url("sections/sobre.css");
+   @import url("sections/acompanhamento.css");
+   @import url("sections/como-funciona.css");
+   @import url("sections/depoimentos.css");
+   @import url("sections/faq.css");
+   @import url("sections/footer.css");
+*/

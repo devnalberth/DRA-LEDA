@@ -1,0 +1,134 @@
+/* ============================================================
+   SEÇÃO · Hero
+   Imagens art-directed por breakpoint (assets/hero/) usadas como
+   background. Mobile-first.
+
+   Estratégia:
+   - Mobile: a foto (767x1657) ocupa o topo em largura total
+     (background-size: 100% auto). O conteúdo é empurrado para a
+     área creme inferior via padding-top proporcional à largura,
+     então flui sobre o creme — nunca sobrepõe a foto, mesmo com
+     zoom ou texto mais longo.
+   - Tablet/Notebook/Desktop: a foto cobre toda a seção
+     (background-size: cover) com aspect-ratio igual ao da imagem
+     (sem corte). O texto fica na coluna esquerda, centralizado na
+     vertical.
+   ============================================================ */
+
+.hero {
+  position: relative;
+  background-color: var(--brand-primary); /* creme: combina com a borda das imagens */
+  background-image: url("../../assets/hero/heromobile.webp");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% auto;
+
+  /* empurra o conteúdo para baixo da foto (relativo à largura) */
+  padding-top: 130%;
+  padding-bottom: 3rem;
+  padding-inline: 1.5rem;
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem; /* 20px */
+  max-width: 540px;
+}
+
+.hero__logo {
+  width: 200px;
+  height: auto;
+  aspect-ratio: 2167 / 726; /* reserva o espaço (evita layout shift) sem atributos no HTML */
+}
+
+.hero h1 {
+  text-transform: uppercase;
+  color: var(--brand-five);
+  /* 24px → 44px conforme a largura da tela */
+  font-size: clamp(1.5rem, 1.15rem + 1.4vw, 2.75rem);
+}
+
+.hero p {
+  color: var(--brand-five);
+}
+
+/* o CTA "abraça" o texto em vez de esticar na coluna */
+.hero .button {
+  align-self: flex-start;
+}
+
+/* ---------- Reveal de entrada (escalonado) ---------- */
+.hero__content > * {
+  animation: hero-rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
+}
+.hero__content > :nth-child(1) { animation-delay: 0.05s; }
+.hero__content > :nth-child(2) { animation-delay: 0.15s; }
+.hero__content > :nth-child(3) { animation-delay: 0.25s; }
+.hero__content > :nth-child(4) { animation-delay: 0.35s; }
+
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__content > * {
+    animation: none;
+  }
+}
+
+/* ============================================================
+   TABLET / iPad — a partir de 768px
+   ============================================================ */
+@media (min-width: 768px) {
+  .hero {
+    display: flex;
+    align-items: center;
+
+    background-image: url("../../assets/hero/heroipad.webp");
+    background-position: center;
+    background-size: cover;
+    aspect-ratio: 1024 / 867;
+
+    padding-top: 0;
+    padding-bottom: 0;
+    /* coluna de texto alinhada à esquerda dentro de uma faixa de 1280px */
+    padding-inline: max(2rem, calc((100% - 1280px) / 2));
+  }
+
+  .hero__content {
+    gap: 1.875rem; /* 30px */
+    max-width: 480px;
+  }
+
+  .hero__logo {
+    width: 220px;
+  }
+}
+
+/* ============================================================
+   NOTEBOOK — a partir de 1024px
+   ============================================================ */
+@media (min-width: 1024px) {
+  .hero {
+    background-image: url("../../assets/hero/heronotebook.webp");
+    aspect-ratio: 1366 / 867;
+  }
+}
+
+/* ============================================================
+   DESKTOP — a partir de 1440px
+   ============================================================ */
+@media (min-width: 1440px) {
+  .hero {
+    background-image: url("../../assets/hero/herodesktop.webp");
+    aspect-ratio: 1920 / 902;
+  }
+}
