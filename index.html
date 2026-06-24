@@ -13,6 +13,17 @@
 
     <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg" />
     <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Preload: fontes críticas (usadas acima do fold) -->
+    <link rel="preload" as="font" type="font/woff2" href="assets/fonte/Sora-Regular.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="assets/fonte/Sora-SemiBold.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="assets/fonte/Sora-Bold.woff2" crossorigin />
+
+    <!-- Preload: imagens hero art-directed (background-image CSS não é descoberta pelo browser early) -->
+    <link rel="preload" as="image" href="assets/hero/heromobile.webp" media="(max-width: 767px)" />
+    <link rel="preload" as="image" href="assets/hero/heroipad.webp" media="(min-width: 768px) and (max-width: 1023px)" />
+    <link rel="preload" as="image" href="assets/hero/heronotebook.webp" media="(min-width: 1024px) and (max-width: 1439px)" />
+    <link rel="preload" as="image" href="assets/hero/herodesktop.webp" media="(min-width: 1440px)" />
   </head>
 
   <body>
@@ -24,6 +35,8 @@
             class="hero__logo"
             src="assets/logo/logo01.png"
             alt="Dra. Leda Gagliardi — Pediatra, CRM PR 33147"
+            fetchpriority="high"
+            decoding="async"
           />
 
           <h1>Sua criança merece cuidado presente do nascimento aos 13 anos</h1>
@@ -239,7 +252,7 @@
 
           <ul class="beneficits__cards">
             <li>
-              <img src="assets/icons/one.svg" alt="" aria-hidden="true" />
+              <img src="assets/icons/one.svg" alt="" aria-hidden="true" loading="lazy" decoding="async" />
               <h3>Atenção real ao seu filho</h3>
               <p>
                 Cada consulta começa com escuta. Seus medos e observações como
@@ -248,7 +261,7 @@
             </li>
 
             <li>
-              <img src="assets/icons/two.svg" alt="" aria-hidden="true" />
+              <img src="assets/icons/two.svg" alt="" aria-hidden="true" loading="lazy" decoding="async" />
               <h3>Puericultura completa conforme a SBP</h3>
               <p>
                 Peso, altura e desenvolvimento registrados e interpretados com
@@ -257,7 +270,7 @@
             </li>
 
             <li>
-              <img src="assets/icons/three.svg" alt="" aria-hidden="true" />
+              <img src="assets/icons/three.svg" alt="" aria-hidden="true" loading="lazy" decoding="async" />
               <h3>Exames e orientações personalizados</h3>
               <p>
                 Quando necessário, pedidos de exames precisos, sem exageros e
@@ -266,7 +279,7 @@
             </li>
 
             <li>
-              <img src="assets/icons/four.svg" alt="" aria-hidden="true" />
+              <img src="assets/icons/four.svg" alt="" aria-hidden="true" loading="lazy" decoding="async" />
               <h3>Suporte por 15 dias após a consulta</h3>
               <p>
                 Você tem acesso ao contato da Dra. Leda para dúvidas e
@@ -275,7 +288,7 @@
             </li>
 
             <li>
-              <img src="assets/icons/five.svg" alt="" aria-hidden="true" />
+              <img src="assets/icons/five.svg" alt="" aria-hidden="true" loading="lazy" decoding="async" />
               <h3>Retorno garantido</h3>
               <p>
                 Consulta de retorno em até 15 dias para acompanhar a evolução ou
@@ -284,7 +297,7 @@
             </li>
 
             <li>
-              <img src="assets/icons/six.svg" alt="" aria-hidden="true" />
+              <img src="assets/icons/six.svg" alt="" aria-hidden="true" loading="lazy" decoding="async" />
               <h3>Olhar de mãe e de médica</h3>
               <p>
                 A Dra. Leda é mãe. Ela entende o que você sente, e isso muda
@@ -716,7 +729,7 @@
                   <summary>
                     A Dra. Leda atende crianças de qualquer cidade?
                     <span class="faq__icon" aria-hidden="true">
-                      <img src="assets/icons/plus.svg" alt="" width="16" height="16" />
+                      <img src="assets/icons/plus.svg" alt="" width="16" height="16" loading="lazy" decoding="async" />
                     </span>
                   </summary>
                   <div class="faq__answer">
@@ -730,7 +743,7 @@
                   <summary>
                     Qual a faixa etária atendida?
                     <span class="faq__icon" aria-hidden="true">
-                      <img src="assets/icons/plus.svg" alt="" width="16" height="16" />
+                      <img src="assets/icons/plus.svg" alt="" width="16" height="16" loading="lazy" decoding="async" />
                     </span>
                   </summary>
                   <div class="faq__answer">
@@ -744,7 +757,7 @@
                   <summary>
                     Como funciona o acompanhamento após a consulta?
                     <span class="faq__icon" aria-hidden="true">
-                      <img src="assets/icons/plus.svg" alt="" width="16" height="16" />
+                      <img src="assets/icons/plus.svg" alt="" width="16" height="16" loading="lazy" decoding="async" />
                     </span>
                   </summary>
                   <div class="faq__answer">
@@ -758,7 +771,7 @@
                   <summary>
                     O que é puericultura?
                     <span class="faq__icon" aria-hidden="true">
-                      <img src="assets/icons/plus.svg" alt="" width="16" height="16" />
+                      <img src="assets/icons/plus.svg" alt="" width="16" height="16" loading="lazy" decoding="async" />
                     </span>
                   </summary>
                   <div class="faq__answer">
@@ -772,7 +785,7 @@
                   <summary>
                     Meu filho está com febre. Quando devo buscar atendimento?
                     <span class="faq__icon" aria-hidden="true">
-                      <img src="assets/icons/plus.svg" alt="" width="16" height="16" />
+                      <img src="assets/icons/plus.svg" alt="" width="16" height="16" loading="lazy" decoding="async" />
                     </span>
                   </summary>
                   <div class="faq__answer">
@@ -786,7 +799,7 @@
                   <summary>
                     Meu bebê não está mamando bem. O que devo fazer?
                     <span class="faq__icon" aria-hidden="true">
-                      <img src="assets/icons/plus.svg" alt="" width="16" height="16" />
+                      <img src="assets/icons/plus.svg" alt="" width="16" height="16" loading="lazy" decoding="async" />
                     </span>
                   </summary>
                   <div class="faq__answer">
@@ -800,7 +813,7 @@
                   <summary>
                     Meu filho não come nada. Isso é normal?
                     <span class="faq__icon" aria-hidden="true">
-                      <img src="assets/icons/plus.svg" alt="" width="16" height="16" />
+                      <img src="assets/icons/plus.svg" alt="" width="16" height="16" loading="lazy" decoding="async" />
                     </span>
                   </summary>
                   <div class="faq__answer">
@@ -814,7 +827,7 @@
                   <summary>
                     A Dra. Leda atende casos de alergia?
                     <span class="faq__icon" aria-hidden="true">
-                      <img src="assets/icons/plus.svg" alt="" width="16" height="16" />
+                      <img src="assets/icons/plus.svg" alt="" width="16" height="16" loading="lazy" decoding="async" />
                     </span>
                   </summary>
                   <div class="faq__answer">
