@@ -1,0 +1,298 @@
+/* ============================================================
+   MOTION · Entradas, hovers e microinterações
+   Camada progressiva: o conteúdo permanece visível sem JavaScript.
+   ============================================================ */
+
+:root {
+  --motion-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --motion-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --motion-fast: 240ms;
+  --motion-base: 520ms;
+  --motion-slow: 760ms;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .js-motion [data-reveal] {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translate3d(0, 24px, 0);
+    transition: opacity var(--motion-slow) var(--motion-ease-out),
+      filter var(--motion-slow) var(--motion-ease-out),
+      transform var(--motion-slow) var(--motion-ease-out);
+    transition-delay: min(calc(var(--reveal-index, 0) * 70ms), 420ms);
+    will-change: opacity, filter, transform;
+  }
+
+  .js-motion [data-reveal="card"] {
+    transform: translate3d(0, 22px, 0) scale(0.985);
+  }
+
+  .js-motion [data-reveal="media"] {
+    transform: translate3d(0, 20px, 0) scale(0.975);
+  }
+
+  .js-motion [data-reveal="text"] {
+    filter: none;
+    transform: translate3d(0, 18px, 0);
+  }
+
+  .js-motion [data-reveal].is-visible {
+    opacity: 1;
+    filter: blur(0);
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+/* ============================================================
+   Cards e blocos clicáveis — base de transição
+   ============================================================ */
+.beneficits__cards li,
+.acompanhamento__list li,
+.como-funciona__cards li,
+.depoimento-card,
+.faq__item {
+  position: relative;
+  transition:
+    transform var(--motion-fast) var(--motion-ease),
+    box-shadow var(--motion-fast) var(--motion-ease),
+    background-color var(--motion-fast) var(--motion-ease),
+    border-color var(--motion-fast) var(--motion-ease);
+}
+
+/* ---------- Transições de texto e ícones aninhados ---------- */
+.beneficits__cards h3,
+.beneficits__cards p,
+.como-funciona__cards h3,
+.como-funciona__cards p,
+.acompanhamento__list h3,
+.acompanhamento__list li p {
+  transition: color var(--motion-fast) var(--motion-ease);
+}
+
+.beneficits__cards img {
+  transition:
+    filter var(--motion-fast) var(--motion-ease),
+    transform var(--motion-fast) var(--motion-ease);
+}
+
+/* ---------- Depoimento — barra de topo ---------- */
+.depoimento-card::before {
+  transform-origin: left center;
+  transition:
+    width var(--motion-base) var(--motion-ease),
+    transform var(--motion-base) var(--motion-ease),
+    box-shadow var(--motion-base) var(--motion-ease),
+    background-color var(--motion-base) var(--motion-ease);
+}
+
+/* ---------- Imagens escaláveis ---------- */
+.como-funciona__cards img,
+.acompanhamento__list img,
+.acompanhamento__photos img,
+.sobre__photo {
+  transition:
+    transform var(--motion-base) var(--motion-ease),
+    filter var(--motion-base) var(--motion-ease),
+    box-shadow var(--motion-base) var(--motion-ease);
+}
+
+/* ---------- Elementos de UI ---------- */
+.badge img,
+.footer__social-link,
+.footer__nav a {
+  transition:
+    color var(--motion-fast) var(--motion-ease),
+    opacity var(--motion-fast) var(--motion-ease),
+    transform var(--motion-fast) var(--motion-ease),
+    box-shadow var(--motion-fast) var(--motion-ease);
+}
+
+.faq__icon {
+  transition:
+    transform var(--motion-fast) var(--motion-ease),
+    border-color var(--motion-fast) var(--motion-ease),
+    background-color var(--motion-fast) var(--motion-ease);
+}
+
+/* ============================================================
+   Hover states — apenas dispositivos com ponteiro preciso
+   ============================================================ */
+@media (hover: hover) {
+
+  /* ---- Badge ---- */
+  .badge:hover img {
+    transform: rotate(14deg) scale(1.08);
+  }
+
+  /* ---- Como Funciona cards ---- */
+  .como-funciona__cards li:hover {
+    transform: translateY(-10px) scale(1.016);
+    background-color: var(--brand-five);
+    box-shadow:
+      0 28px 56px -24px rgba(77, 58, 25, 0.9),
+      0 8px 18px -12px rgba(77, 58, 25, 0.5);
+  }
+
+  .como-funciona__cards li:hover h3 {
+    color: var(--white);
+  }
+
+  .como-funciona__cards li:hover p {
+    color: var(--brand-primary);
+  }
+
+  .como-funciona__cards li:hover img {
+    transform: scale(1.06);
+    filter: saturate(1.1) contrast(1.03) brightness(1.04);
+  }
+
+  /* ---- Benefícios cards ---- */
+  .beneficits__cards li:hover {
+    transform: translateY(-10px) scale(1.02);
+    background-color: var(--brand-secondary);
+    border-color: var(--brand-primary);
+    box-shadow:
+      0 26px 52px -24px rgba(77, 58, 25, 0.88),
+      0 8px 18px -12px rgba(77, 58, 25, 0.45);
+  }
+
+  .beneficits__cards li:hover h3 {
+    color: var(--brand-primary);
+  }
+
+  .beneficits__cards li:hover p {
+    color: var(--brand-four);
+  }
+
+  .beneficits__cards li:hover img {
+    transform: scale(1.08) rotate(5deg);
+  }
+
+  /* ---- Acompanhamento cards ---- */
+  .acompanhamento__list li:hover {
+    transform: translateY(-8px);
+    background-color: var(--brand-five);
+    box-shadow:
+      0 28px 56px -24px rgba(77, 58, 25, 0.88),
+      0 8px 18px -12px rgba(77, 58, 25, 0.5);
+  }
+
+  .acompanhamento__list li:hover h3 {
+    color: var(--brand-primary);
+  }
+
+  .acompanhamento__list li:hover p {
+    color: var(--brand-four);
+  }
+
+  .acompanhamento__list li:hover img {
+    transform: scale(1.04);
+    filter: saturate(1.06) contrast(1.02);
+  }
+
+  /* ---- Fotos avulsas ---- */
+  .acompanhamento__photos img:hover,
+  .sobre__photo:hover {
+    transform: translateY(-5px);
+    filter: saturate(1.05) contrast(1.02);
+    box-shadow: 0 22px 44px -30px rgba(77, 58, 25, 0.76);
+  }
+
+  /* ---- Depoimentos cards ---- */
+  .depoimento-card:hover {
+    transform: translateY(-10px) scale(1.012);
+    background-color: var(--brand-five);
+    box-shadow:
+      0 30px 60px -26px rgba(77, 58, 25, 0.92),
+      0 10px 22px -14px rgba(77, 58, 25, 0.5);
+  }
+
+  .depoimento-card:hover::before {
+    width: calc(100% - 3.83rem);
+    transform: scaleX(1.02);
+    box-shadow: 0 10px 24px -14px rgba(239, 225, 213, 0.9);
+    background-color: color-mix(in srgb, var(--brand-primary) 90%, #fff);
+  }
+
+  /* ---- FAQ items ---- */
+  .faq__item:hover {
+    transform: translateY(-4px);
+    background-color: var(--brand-five);
+    box-shadow:
+      0 24px 48px -28px rgba(77, 58, 25, 0.9),
+      0 8px 16px -12px rgba(77, 58, 25, 0.45);
+  }
+
+  .faq__item:hover summary {
+    color: var(--brand-primary);
+  }
+
+  .faq__item:hover .faq__icon {
+    border-color: var(--brand-primary);
+    background-color: rgba(239, 225, 213, 0.15);
+    transform: rotate(8deg) scale(1.08);
+  }
+
+  .faq__item[open]:hover .faq__icon {
+    transform: rotate(45deg) scale(1.08);
+  }
+
+  /* ---- Rodapé ---- */
+  .footer__social-link:hover {
+    opacity: 1;
+    transform: translateY(-3px);
+    box-shadow: 0 16px 30px -22px rgba(239, 225, 213, 0.9);
+  }
+
+  .footer__nav a:hover {
+    opacity: 1;
+    color: var(--brand-primary);
+    transform: translateX(4px);
+  }
+}
+
+/* ============================================================
+   FAQ — estado aberto
+   ============================================================ */
+.faq__item summary {
+  transition:
+    color var(--motion-fast) var(--motion-ease),
+    background-color var(--motion-fast) var(--motion-ease);
+}
+
+.faq__item[open] summary {
+  background-color: color-mix(in srgb, var(--brand-secondary) 88%, var(--brand-five));
+}
+
+.faq__item[open] .faq__answer {
+  animation: faq-answer-in 280ms var(--motion-ease-out) both;
+}
+
+@keyframes faq-answer-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================================
+   Acessibilidade — redução de movimento
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

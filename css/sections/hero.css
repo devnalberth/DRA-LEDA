@@ -56,6 +56,14 @@
 /* o CTA "abraça" o texto em vez de esticar na coluna */
 .hero .button {
   align-self: flex-start;
+  padding: 1.375rem 3.125rem;
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+}
+
+.hero .button svg {
+  width: 18px;
+  aspect-ratio: 1;
 }
 
 /* ---------- Reveal de entrada (escalonado) ---------- */

@@ -14,22 +14,18 @@
   isolation: isolate;
   overflow: hidden;
   background-color: var(--brand-primary);
-  padding-block: clamp(2.5rem, 5vw, 3.75rem);
+  padding-block: clamp(1.75rem, 3vw, 2.5rem);
   padding-inline: 1.5rem;
 }
 
-/* ---------- Camada de fundo (band + watermark) ----------
-   Só aparece em telas largas (≥1280px), onde o painel fica
-   centralizado e o watermark realmente fica visível nas laterais.
-   Abaixo disso o painel é quase full-width e a band viraria
-   apenas tiras marrons sem sentido — então fica oculta. */
+/* ---------- Camada de fundo (band + watermark) ---------- */
 .beneficits__bg {
   display: none;
   position: absolute;
   inset-inline: 0;
   top: 50%;
   transform: translateY(-50%);
-  height: min(723px, 65%);
+  height: min(700px, 60%);
   background-color: var(--brand-secondary);
   z-index: 0;
 }
@@ -47,13 +43,14 @@
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 1222px;
+  max-width: 1100px;
   margin-inline: auto;
 
   display: flex;
   flex-direction: column;
-  gap: clamp(2rem, 4vw, 3.125rem); /* 50px */
-  padding: clamp(1.5rem, 4vw, 3.75rem); /* 60px */
+  gap: clamp(1rem, 1.75vw, 1.8rem);
+  padding-block: clamp(2.25rem, 4vw, 4.5rem);
+  padding-inline: clamp(1.25rem, 2.5vw, 3rem);
 
   background-color: var(--brand-secondary);
   border: 1px solid var(--brand-primary);
@@ -62,7 +59,10 @@
 
 .beneficits__panel > h2 {
   color: var(--brand-primary);
+  font-size: clamp(1.875rem, 2.8vw, 2.25rem);
+  line-height: 1.14;
   text-align: center;
+  text-wrap: balance;
 }
 
 .beneficits__panel hr {
@@ -81,7 +81,7 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-auto-rows: 1fr; /* todos os cards com a mesma altura */
-  gap: 20px;
+  gap: 0.875rem;
   width: 100%;
 }
 
@@ -90,28 +90,38 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1.5625rem; /* 25px */
-  padding: 1.875rem 1.25rem; /* 30 / 20 */
+  gap: 0.75rem;
+  min-height: 10.75rem;
+  padding: 1.125rem 1rem;
   border-radius: 12px;
+  border: 1px solid transparent;
   background-color: var(--brand-primary);
   text-align: center;
 }
 
 .beneficits__cards img {
-  width: 81px;
+  width: clamp(3rem, 4vw, 3.5rem);
   aspect-ratio: 1;
 }
 
 .beneficits__cards h3 {
-  font-size: 1.125rem; /* 18px */
+  max-width: 17rem;
+  font-size: 0.9375rem;
   font-weight: var(--fw-bold);
   line-height: 1.2;
   color: var(--brand-five);
 }
 
 .beneficits__cards p {
-  max-width: 18rem; /* ~287px */
+  max-width: 17.5rem;
   color: var(--brand-five);
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.beneficits .button--light {
+  padding: 0.875rem 2rem;
+  font-size: 0.9375rem;
 }
 
 /* ============================================================

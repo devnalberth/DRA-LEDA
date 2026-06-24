@@ -40,6 +40,18 @@
   aspect-ratio: 2167 / 726;
 }
 
+.depoimentos .button {
+  align-self: center;
+  padding: 1.375rem 3.125rem;
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+}
+
+.depoimentos .button svg {
+  width: 18px;
+  aspect-ratio: 1;
+}
+
 .depoimentos__cards {
   display: grid;
   grid-template-columns: 1fr;

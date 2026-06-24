@@ -1,0 +1,81 @@
+/* ============================================================
+   COMPONENTE · Faixa Marquee / Ticker Infinito
+   Duas posições: após Hero e após Benefícios.
+   Fundo caramelo + logo branca + texto creme.
+   ============================================================ */
+
+.marquee-band {
+  overflow: hidden;
+  background-color: var(--brand-secondary);
+  border-top: 1.5px solid var(--brand-five);
+  border-bottom: 1.5px solid var(--brand-five);
+  padding-block: 0.75rem; /* 12px */
+  cursor: default;
+  user-select: none;
+}
+
+/* ---------- Track: flex row com dois reels idênticos ---------- */
+.marquee-band__track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 40s linear infinite;
+  will-change: transform;
+}
+
+/* Pausa ao hover — acessibilidade */
+.marquee-band:hover .marquee-band__track {
+  animation-play-state: paused;
+}
+
+/* ---------- Reel: uma cópia do conteúdo completo ---------- */
+.marquee-band__reel {
+  display: flex;
+  align-items: center;
+  gap: 2.25rem; /* 36px entre cada item */
+  padding-inline-end: 2.25rem; /* garante continuidade na junção */
+  flex-shrink: 0;
+}
+
+/* ---------- Logo ---------- */
+.marquee-band__logo {
+  height: 40px;
+  width: auto;
+  display: block;
+  flex-shrink: 0;
+  opacity: 0.95;
+}
+
+/* ---------- Texto ---------- */
+.marquee-band__text {
+  color: var(--brand-primary);
+  font-family: var(--font-family);
+  font-size: 0.75rem;       /* 12px */
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.22em;
+  line-height: 1;
+  text-transform: uppercase;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ---------- Separador (losango) ---------- */
+.marquee-band__sep {
+  color: var(--brand-primary);
+  font-size: 0.4rem;
+  flex-shrink: 0;
+  line-height: 1;
+  opacity: 0.55;
+}
+
+/* ---------- Keyframe ---------- */
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ---------- Acessibilidade: sem animação ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-band__track {
+    animation: none;
+  }
+}

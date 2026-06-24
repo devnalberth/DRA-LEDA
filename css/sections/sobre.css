@@ -5,12 +5,47 @@
    ============================================================ */
 
 .sobre {
+  position: relative;
+  overflow: hidden;
   background-color: var(--brand-secondary);
+  background-image: radial-gradient(
+    ellipse 70% 55% at 100% 0%,
+    rgba(180, 100, 20, 0.45) 0%,
+    transparent 65%
+  );
   padding-block: clamp(3.75rem, 8.333vw, 7.5rem); /* 60px → 120px */
   padding-inline: 1.5rem;
 }
 
+.sobre::before {
+  content: "";
+  position: absolute;
+  top: -180px;
+  left: -130px;
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(239, 225, 213, 0.2);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.sobre::after {
+  content: "";
+  position: absolute;
+  bottom: -90px;
+  right: -90px;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  border: 1px solid rgba(239, 225, 213, 0.13);
+  pointer-events: none;
+  z-index: 0;
+}
+
 .sobre__inner {
+  position: relative;
+  z-index: 1;
   width: 100%;
   max-width: 1280px;
   margin-inline: auto;
